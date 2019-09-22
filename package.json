@@ -7,7 +7,7 @@
     "start": "node server/app.js",
     "test": "nodemon server/app.js"
   },
-  "author": "Ben & Death",
+  "author": "Rank & Death",
   "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.4.3",
