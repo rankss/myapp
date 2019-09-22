@@ -19,6 +19,7 @@ db.on('error', (err) => {
         console.log('failed to connect to db');
     }
 });
+
 db.once('open', () => {
     console.log('connected to db');
 });
