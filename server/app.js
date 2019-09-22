@@ -3,11 +3,13 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
 
-const connection = 'mongodb://localhost/myapp';
+const dbinfo = require('./dbinfo.json');
+const connection = `mongodb+srv://${dbinfo.username}:${dbinfo.password}@cluster0-jciwx.mongodb.net/test?retryWrites=true&w=majority`;
 
 mongoose.connect(connection, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useCreateIndex: true
 });
 
 const db = mongoose.connection;
@@ -39,4 +41,3 @@ const PORT = 8080
 app.listen(PORT, () => {
     console.log(`server has started on port ${PORT}`)
 });
-
